@@ -1,0 +1,45 @@
+--quetion étoilé .
+
+exo2.3)
+
+La requète fait une boucle infini  car il y a une equivalence et non une subsomption pour chien et canidé.
+
+exo3.7)
+
+subsS(chat,X).
+X = chat ;
+X = felin ;
+X = mammifere ;
+X = animal ;
+X = etreVivant ;
+X = some(mange) ;
+false.
+
+
+?- subsS(X,mammifere).
+X = mammifere ;
+X = souris ;
+X = felin ;
+X = canide ;
+X = chat ;
+X = lion ;
+X = chien ;
+false.
+
+
+exo3.10)
+On a plus interet a dériver les subombtion de la tbox car si on le fait avec la subsompbtion structurelle on peut avoir des equivalence fausse par exemple: 
+A c B c C
+C c A
+ca marche pour subsompbtion structurelle.alores que c est faut.
+ 
+
+
+
+
+
+
+
+
+
+

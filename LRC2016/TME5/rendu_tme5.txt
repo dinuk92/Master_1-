@@ -1,0 +1,192 @@
+Wijesinghe Dinuk 
+Yacine Boukhelif
+
+---------------resume du cours
+
+nous avons appris les base du prolog.
+
+
+----------------Question étoilée 
+
+1.1)
+(C1)r(a,b).
+(C2)r(f(X),Y) :- p(X ,Y).
+(C3)p(f(X),Y) :- r(X ,Y).
+
+
+on a r(f(f(a)),b)
+
+X= f(a) et Y=b on a applique C2 on a :
+
+p(f(a),b)
+
+X= a et Y = b on applique C3 on a :
+
+r(a , b)
+
+on applique C1 on a :
+r(a , b)
+
+Donc la requète marche.
+
+on a p(f(a),b) 
+
+X= a et Y= b on applique C3 on a :
+
+r( a , b)
+
+on applique C1 on a :
+r(a , b)
+
+Donc la requète marche.
+
+2.2)
+
+[trace]  ?- q(X,b).
+   Call: (6) q(_G2780, b) ? creep
+   Exit: (6) q(b, b) ? creep
+X = b .
+
+Prologue remplace le X par b et applique q(X,X) et trouve que ca marche.
+
+[trace]  ?- q(X,b).     
+q(X,b).
+   Call: (6) q(_G3737, b) ? creep
+   Exit: (6) q(b, b) ? creep
+X = b .
+ 
+Prologue remplace le X par b et applique q(X,X) et trouve que ca marche.
+
+exo4
+
+1)
+pere(pepin , charlemagne).
+mere(berthe, charlemagne).
+pere(homer , bart).
+mere(marge, bart).
+pere(homer , lisa).
+mere(marge, lisa).
+pere(homer , maggie).
+mere(marge, maggie).
+pere(gdad,homer).
+
+2)
+parent(X,Y) :- mere(X,Y).
+parent(X,Y) :- pere(X,Y).
+
+
+execution de la requete parent(X,charlemagne).
+[debug]  ?- parent(X,charlemagne).
+X = berthe ;
+X = pepin.
+
+
+3)
+
+execution parent(charlemagne,X).
+
+[debug]  ?- parent(charlemagne,X).
+false.
+
+execution parent(pepin,Y).
+
+[debug]  ?- parent(pepin,Y).
+Y = charlemagne.
+
+
+execution parent(Y,X).
+
+[debug]  ?- parent(Y,X).
+Y = berthe,
+X = charlemagne ;
+Y = marge,
+X = bart ;
+Y = marge,
+X = lisa ;
+Y = marge,
+X = maggie ;
+Y = pepin,
+X = charlemagne ;
+Y = homer,
+X = bart ;
+Y = homer,
+X = lisa ;
+Y = homer,
+X = maggie.
+
+
+4)
+
+parents(X,Y,Z) :- pere(X,Z),mere(Y,Z).
+
+execution de parents(pepin,berthe,charlemagne).
+
+[debug]  ?- parents(pepin,berthe,charlemagne).
+true.
+
+
+execution de parents(homer,marge,bart).
+
+[debug]  ?- parents(homer,marge,bart).
+true .
+
+[debug]  ?- parents(charlemagne,marge,bart).
+false .
+
+5)
+frereOuSoeur(X,Y) :- parent(Z,X),parent(Z,Y),X\=Y.
+
+
+execution frereOuSoeur(lisa,bart).
+
+?- frereOuSoeur(lisa,bart).
+true .
+
+execution frereOuSoeur(lisa,bart).
+
+?- frereOuSoeur(bart,bart).
+false.
+
+6)
+
+ancetre(X,Y) :- parent(X,Y).
+ancetre(X,Y) :- parent(X,Z),ancetre(Z,Y).
+
+execution ancetre(X,bart).
+ 
+?- ancetre(X,bart).
+X = marge ;
+X = homer ;
+X = gdad ;
+false.
+
+?- frereOuSoeur(bart,bart).
+false.
+
+
+exo5 )
+
+et(0,0,0).
+et(0,1,0).
+et(1,0,0).
+et(0,1,1).
+et(1,1,1).
+ou(0,0,0).
+ou(0,1,0).
+ou(1,0,0).
+ou(1,1,1).
+non(1,0).
+non(0,1).
+
+
+nand(X,Y,Z):-et(X,Y,W),non(W,Z).
+
+xor(x,y,z) :-ou(X,Y,Z),et(X,Y,V),non(V,W),et(V,W,Z).
+
+circuit(X,Y,Z):-nand(X,Y,Z),non(X,X2),xor(Z,X2,X3),non(X3,Z).
+
+
+
+
+
+

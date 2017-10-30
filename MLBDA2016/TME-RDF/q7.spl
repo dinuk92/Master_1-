@@ -1,0 +1,15 @@
+base <http://example.org/> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+prefix foaf: <http://xmlns.com/foaf/0.1/> 
+prefix rel: <http://www.perceive.net/schemas/relationship/> 
+prefix : <http://example.org/> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix univ: <http://www.faculty.ac> 
+
+
+select distinct ?e ?u
+where { ?e :studiedAt ?u .{
+{ ?e :hasBrother ?x  } union { ?y :hasBrother ?e  } union { ?e :hasSister ?z } union { ?t :hasSister ?e }} . optional{?x :studiedAt ?u2} . optional{?y :studiedAt ?u3} . optional{?z :studiedAt ?u4} . optional{?t :studiedAt ?u5} . filter(?u != ?u2) . filter(?u != ?u3) . filter(?u != ?u4) . filter(?u != ?u5)
+
+}

@@ -1,0 +1,10 @@
+---------- question étoilé
+
+Exo 3.3
+
+point 2 impossible dans ce cas si le reseaux est quasi vivant et sans blocage alors il devient vivant .  
+point 3 impossible car un réseau de petri quasi-vivant  et reversible est forcement vivant or on nous demande qu 'il soit quasi-vivant et reversible et non vivant.    
+
+Exo 4.1
+
+1) il est possible de deduire les nombres de sénario possible en comptant le nombre de chemin allant du marquage initial(0) au marquage final(15) dans le graphe de marquage accessible(exo4_graph_acc)  . 

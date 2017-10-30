@@ -1,0 +1,48 @@
+Wijesinghe Dinuk 
+
+- Bilan 
+Dans la question 2.1 et 2.2 nous avons appris à faire la méthode des tableau sur le logiciel LOTREC.
+On a vu que si tout les feuille de l'arbre sont fermé alors la formule est insatifiable et 
+si au moins une de feuille qui est ouverte alors la formule est satisfiable.
+Dans l'exercice 3  on appris a résoudre un problème avec des variable propositionnelle. 
+On doit faire une conjonction de tout les connaisances en les ayant formaliser au préalable.
+On peut mettre la conjonction en forme normale conjonctive (FNC) pour facilité le traitement du problème par LOTREC.
+Pour savoir les cas qui marche il faut regarder les feuille ouverte generé par LOTREC.
+On appris dans l 'exercice 3  ce qu'est un prémodèle et un modèle. 
+Dans les tableau sémantique tout les branche ouverte correspondent à des pré-modele.
+  
+-Question étoilé.
+
+2.2.1)
+
+F1 : 
+Tout les branche sont false  donc insatisfiable et non-valide
+
+F2:
+Tout les branche sont ouverte donc satisfiable et valide
+
+F3:
+Tout les branche sont false  donc insatisfiable et non-valide
+
+F4:
+Il y a des feuille ouverte et des feuille fermé donc la formule est satisfiable mais non-valide
+
+F5:
+Il y a des feuille ouverte et des feuille fermé donc la formule est satisfiable mais non-valide
+
+F6:
+Tout les branche sont ouverte donc satisfiable et valide
+
+2.3.3)
+
+En introduisant l'incertitude on se retrouve avec 2 feuille ouverte dans l'arbre on a donc 3 cas possible.
+cas 1 : le patient à la bronchiole et la grippe il doit prendre du tamiflu .
+cas 2 : le patient à la grippe seulement il doit prendre du tamiflu.
+cas 3 : le patient à la bronchiole il ne doit pas prendre du tamiflu.
+ 
+2.4.3)
+
+La formule (a and not b and not c) or (a and b and not c) or (a and b and c) marche.
+  
+
+

@@ -1,0 +1,30 @@
+Dinuk Wijesinghe 
+Yacine Boukhelief
+
+
+-- Résume du TME
+Dans l exercice 1 on apprend a voir si des formule sont satisfiable et valide dans la logique S5 grace à lotrec.
+Il faut tout d'abord utilise la logique predefinie S5_mono_MinLanguage.
+Ensuite on a 2 méthode possible :
+1) on  recupere les connecteur que l'on a besoin d'une autre logique predéfinie et on on écrit les formule et leur négation pour voir si satisfable et valide .
+2) on traduit les formules pour qu'elle contiennent seulement des négation des connaissance et pour qu'elle soit valide. 
+Dans la question il faut faire exactement la meme chose que dans la question 1 pour voir si elle est valide dans s5 et il changer de logique predéfinie et aller dans la logique S4_minLAnguage et il faut remplacer les knows par des nec.Et on trouve que c'est satisfiable  mais pas valide pour S4 pour S4 .
+dans l'exercice 3 on a refait l exercice des femme sur les marche sur  lotrec .
+Dans l exercice 4 il faut recre le modele de kripke et mettre les agent et faire des isTrue de chaque formulee t voir si il n'y a pas d'incohérence . Si c'est le cas alors les agent sont bien placer .    
+
+--Question étoilée
+
+exercice 2)
+On change la formule d'équivalence dans pour qu il n'y ai que des and , not et knows.
+on se retouve avec :
+not and not and not knows P not knows not knows P not and knows not knows P knows P.
+on l'ecrit dans le modele s5 et le modele s4 . et on trouve valide en s5 et satifiable en s4.    
+
+
+exercice 4)
+
+les relation d accessibilitée des agents sont R1= {(w1,w2) (w3,w1) }
+R2 = {(w1,w2)(w3,w4)} 
+R3 = {(w1,w3)(w2,w4)}  
+
+

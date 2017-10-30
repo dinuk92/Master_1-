@@ -1,0 +1,13 @@
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+prefix foaf: <http://xmlns.com/foaf/0.1/> 
+prefix f: <http://www.cems.uwe.ac.uk/empdept/concept/> 
+prefix : <http://www.abc.org/> 
+prefix xs: <http://www.w3.org/2001/XMLSchema#>
+
+select ?emp1 ?sal1 ?emp2 ?sal2 
+where {
+	?emp1 f:Sal ?sal1 .
+	?emp2 f:Sal ?sal2 .
+	filter ( xs:integer(?sal1 )-xs:integer(?sal2 )< 5 && str(?emp1) < str(?emp2)) .
+}

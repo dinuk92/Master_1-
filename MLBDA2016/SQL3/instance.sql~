@@ -1,0 +1,61 @@
+-- compléter l'entête 
+-- ==================
+
+-- NOM    :Wijesinghe
+-- Prénom :Dinuk
+
+-- NOM    :
+-- Prénom :
+
+-- Groupe :
+-- binome :
+
+-- ================================================
+
+-- stockage des données : définition des relations
+-- ====================
+
+
+
+-- instanciation des objets
+-- ========================
+
+desc les_piece_base;
+
+desc lesmatiere;
+
+insert into lesmatiere values(matiere('bois',10,2));
+
+
+insert into lesmatiere values(matiere('fer',5,3));
+
+insert into lesmatiere values(matiere('ferrite',6,10));
+
+select * from lesmatiere;
+
+drop table lesmatiere;
+
+
+insert into les_piece_base values( cylindrique('canne',(select ref(m)
+       	    		   	   			from lesmatiere m
+							where m.nom='bois'),
+							30,
+							2));
+
+insert into les_piece_base values( cylindrique('clou',(select ref(m)
+       	    		   	   			from lesmatiere m
+							where m.nom='fer'),
+							20,
+							1));
+
+insert into les_piece_base values( cylindrique('aimant',(select ref(m)
+       	    		   	   			from lesmatiere m
+							where m.nom='ferrite'),
+							5,
+							2));
+ 
+
+select deref(p.mat)  from les_piece_base p;
+
+insert into piece_composite values
+('piece_compos',2,((select ref(p) from pb p where p.nom=champions_bois and p.mat='bois')(select ref(p) from pb p where p.nom = 'heliosphere_maudite'));

@@ -1,0 +1,29 @@
+Dinuk Wijesinghe
+Yacine Boukhelif
+
+-- resumé du TME
+
+Dans l'exercice d'échauffement nous avons appris à creer des modèles de Kripke avec le logiciel LOTREC.
+on utilise les mots-clé CreateNewnode link et add pour creer les modeles de kripke.
+Dans l'exercice 1 on appprend à montrer si des formules sont vrai ou fausse selon un modele de Kripke dans LOTREC.
+LOTREC va juste mettre le isItTrue dans monde correct et on doit voire nous mm si il y a une incohérance.
+Si il y a incoherance la formule est fausse.    
+Dans l exercice 3 on apprend à montrer la satifaibilité de formule avec LOTREC.
+LOTREC fait une méthode de tableau sémantique pour prouver la satifiabilité.
+On à juste a faire la negation une formule et avoir tout les branche de l' arbre fermé 
+pour montrez que la formule est valide (Facile sur LOTREC mais plus compliqué à la main). 
+
+-- Question étoilé
+
+-- exercice 1.2
+Le modèle de Kripke m0 avec les specifications suivante :
+W = {w,w1,w2}
+R = {(w,w1),(w1,w2),(w2,w)}  
+I(p)= {w1}
+I(q)= {w1,w2}
+
+-- exercice 2.3
+On écrit la formule: not imp nec imp P Q imp nec P nec Q dans Lotrec.
+et on clique sur satifiability check et on voit que toutes les feuille de l'arbre est a false 
+alors on peut conclure de la formule est valide.
+

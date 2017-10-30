@@ -1,0 +1,14 @@
+base <http://example.org/> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+prefix foaf: <http://xmlns.com/foaf/0.1/> 
+prefix rel: <http://www.perceive.net/schemas/relationship/> 
+prefix : <http://example.org/> 
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+prefix univ: <http://www.faculty.ac> 
+
+select ?e
+where {?e :studiedAt ?u . ?m :studiedAt ?u . ?d :studiedAt ?u . ?e :hasMother  ?m . ?e :hasFather ?d }       
+
+
+{?e :hasFather ?dad . optional{?dad :studiedAt ?u2 }. filter(bound(?u2))}

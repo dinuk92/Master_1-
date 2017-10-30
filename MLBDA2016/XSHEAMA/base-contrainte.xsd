@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE xs:schema SYSTEM "XMLSchema.dtd">
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<!--  à compléter -->
+	<xs:element name="base">
+		<xs:complexType >
+			<xs:all>   
+				<xs:element ref="restaurant"/>
+				<xs:element ref="ville"/>
+			</xs:all>
+		</xs:complexType >
+		<xs:key name="Vkey">
+			<xs:selector xpath="ville"/>
+			<xs:field xpath="@nom"/>
+		</xs:key>
+		<xs:keyref name="Vref" refer="Vkey"  >
+			<xs:selector xpath="restaurant"/>
+			<xs:field xpath="@ville"/>
+		</xs:keyref>		 
+	</xs:element>
+	<xs:element name="restaurant">
+			<xs:complexType>
+				<xs:sequence>
+					<xs:element name="fermeture" type="xs:string" minOccurs = "0"/>
+					<xs:element name="menu">
+						<xs:complexType>
+							<xs:attribute name="nom" type="xs:string"/>
+							<xs:attribute name="prix" type="xs:integer"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+				<xs:attribute name="nom" type="xs:string"/>
+				<xs:attribute name="etoile" type ="xs:integer"/>
+				<xs:attribute name="ville" type ="xs:string"/>
+			</xs:complexType>
+	</xs:element>
+	<xs:element name="ville">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="plusBeauMonument" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="nom" type="xs:string"/>
+						<xs:attribute name="tarif" type="xs:integer"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="nom" type="xs:string"/>
+			<xs:attribute name="departement" type="xs:integer"/>
+		 </xs:complexType>
+	</xs:element>
+</xs:schema>
